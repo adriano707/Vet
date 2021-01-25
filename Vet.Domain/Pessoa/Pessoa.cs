@@ -25,6 +25,16 @@ namespace Vet.Domain.Pessoa
             return true;
         }
 
+        public class Veterinario
+        {
+        }
 
+        public class Pessoa
+        {
+        }
+
+        public class Cliente
+        {
+        }
     }
 }

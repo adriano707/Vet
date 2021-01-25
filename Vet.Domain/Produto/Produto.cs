@@ -17,5 +17,6 @@ namespace Vet.Domain.Produto
             Id = Guid.NewGuid();
             Nome = nome ?? throw new ArgumentNullException(nameof(nome));
         }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vet.Domain.Financeiro
 {
-    class Procedimento
+    public class Procedimento
     {
         public Guid Id { get; private set; }
         public string Nome { get; private set; }

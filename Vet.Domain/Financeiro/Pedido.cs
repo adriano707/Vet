@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vet.Domain.Financeiro
 {
-    class Pedido
+    public class Pedido
     {
         public Guid Id { get; private set; }
         public DateTimeOffset Data { get; private set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vet.Domain.Login
 {
-    class Login
+    public class Login
     {
         public Guid Id { get; private set; }
         public string Usuario { get; private set; }

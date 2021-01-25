@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vet.Domain.Animal
 {
-    class Habitat
+    public class Habitat
     {
         public Guid Id { get; private set; }
         public string Nome { get; private set; }

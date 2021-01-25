@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vet.Domain.Animal
 {
-    class AnimalVacina
+    public class AnimalVacina
     {
         public Guid Id { get; private set; }
         public Produto.Vacinas Vacina { get; private set; }

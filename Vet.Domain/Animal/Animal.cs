@@ -16,5 +16,6 @@ namespace Vet.Domain.Animal
             Id = Guid.NewGuid();
             Nome = nome ?? throw new ArgumentNullException(nameof(nome));
         }
+
     }
 }

@@ -7,7 +7,7 @@ using Vet.Domain.Pessoa;
 
 namespace Vet.Domain.Consulta
 {
-    class Consulta
+    public class Consulta
     {
         public Guid Id { get; private set; }
         public DateTimeOffset DataInicio { get; private set; }

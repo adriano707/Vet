@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vet.Domain.Animal
 {
-    class Porte
+    public class Porte
     {
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
