@@ -12,6 +12,8 @@ namespace Vet.Domain.Login
         public string Usuario { get; private set; }
         public string Senha { get; private set; }
 
+        public Login() { }
+
         public Login(string usuario, string senha)
         {
             Id = Guid.NewGuid();

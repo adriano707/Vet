@@ -15,12 +15,14 @@ namespace Vet.Domain.Pessoa
         public string IE { get; private set; }
         public string Telefone { get; private set; }
 
+        public Empresa() { }
+
         public Empresa(string nome, string razaoSocial, string nomeFantasia, 
             string complemento, string cnpj, string ie, string telefone) : base(nome)
         {
-            NomeRazaoSocial = razaoSocial;
-            NomeFantasia = nomeFantasia;
-            Complemento = complemento;
+            NomeRazaoSocial = razaoSocial ?? throw new ArgumentException(nameof(razaoSocial));
+            NomeFantasia = nomeFantasia ?? throw new ArgumentException(nameof(nomeFantasia ));
+            Complemento = complemento ?? throw new ArgumentException(nameof(complemento));
             CNPJ = cnpj;
             IE = ie;
             Telefone = telefone;

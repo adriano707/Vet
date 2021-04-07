@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace Vet.Dtos.AnimalDto
+
+namespace Vet.Dtos
 {
     public class AnimalDto
     {

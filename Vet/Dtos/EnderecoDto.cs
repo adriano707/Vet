@@ -1,8 +1,9 @@
 ﻿using System;
+using Vet.Dtos;
 
-namespace Vet.Dtos
+namespace Vet.Api.Dtos
 {
-    public class EnderecosDto
+    public class EnderecoDto
     {
         public Guid Id { get; set; }
         public BairroDto Bairro { get; set; }

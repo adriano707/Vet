@@ -12,6 +12,8 @@ namespace Vet.Domain.Financeiro
         public string Nome { get; private set; }
         public double Valor { get; private set; }
 
+        public Procedimento() { }
+
         public Procedimento(string nome, double valor)
         {
             Id = Guid.NewGuid();

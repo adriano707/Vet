@@ -12,11 +12,13 @@ namespace Vet.Domain.Pessoa
         public string  Identificacao { get; private set; }
         public string Observacao { get; private set; }
 
+        public Boxs() { }
+
         public Boxs(string identificacao, string observacao)
         {
             Id = Guid.NewGuid();
-            Identificacao = identificacao;
-            Observacao = observacao;
+            Identificacao = identificacao ?? throw new ArgumentException(nameof(identificacao));
+            Observacao = observacao ?? throw new ArgumentException(nameof(observacao));
         }
     }
 }

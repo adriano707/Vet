@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Vet.Data;
 using Vet.Domain.Pessoa;
 using Vet.Dtos;
 
@@ -12,26 +13,34 @@ namespace Vet.Controllers
     [Route("Pessoas")]
     public class PessoaController : ControllerBase
     {
-        public List<Pessoa> ObterTodasPessoas()
+        public PessoaController(DataContext dataContext)
         {
-            return new List<Pessoa>();
+            _dataContext = dataContext;
+        }
+
+        private readonly DataContext _dataContext;
+
+        [HttpGet]
+        public async Task<IActionResult> ObterTodasPessoas()
+        {
+            var pessoas = _dataContext.Pessoa.ToList();
+            return Ok(pessoas);
         }
 
         [HttpGet]
-        [Route("Pessoa")]
+        [Route("{id}")]
         public Pessoa ObterPessoaPeloId([FromRoute] Guid id)
         {
             return null;
         }
 
-        public Pessoa ObterPessoaPorTipo()
-        {
-            return null;
-        }
 
         [HttpPost]
         public async Task<IActionResult> CriarPessoa([FromBody] PessoaDto pessoaDto)
         {
+            Pessoa pessoa = new Pessoa(pessoaDto.Nome);
+            _dataContext.Add(pessoa);
+            await _dataContext.SaveChangesAsync();
             return Ok();
         }
     }

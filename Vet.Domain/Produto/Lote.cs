@@ -14,6 +14,8 @@ namespace Vet.Domain.Produto
         public DateTimeOffset DataValidade { get; private set; }
         public int Quantidade { get; private set; }
 
+        public Lote() { }
+
         public Lote(string nome, DateTimeOffset dataFabricacao, DateTimeOffset dataValidade, int quantidade)
         {
             Id = Guid.NewGuid();

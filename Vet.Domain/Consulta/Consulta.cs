@@ -27,19 +27,26 @@ namespace Vet.Domain.Consulta
         public DateTimeOffset DataEncerramento { get; set; }
         public Status Status { get; set; }
 
-        public Consulta(DateTimeOffset dataInicio, double peso, double temperatura, string queixaPrincipal, string procedimento,  double total, double unitario, int quantidade, string situacao, string observacoes)
+        public Consulta() { }
+
+        public Consulta(DateTimeOffset dataInicio, Pessoa.Pessoa cliente, Pessoa.Pessoa veterinario,
+            double peso, double temperatura, string queixaPrincipal, string procedimento,  double total,
+            double unitario, int quantidade, string situacao, Animal.Animal paciente, string observacoes,
+            DateTimeOffset dataLimiteRetorno, DateTimeOffset dataEncerramento, Status Status)
         {
             Id = Guid.NewGuid();
             DataInicio = dataInicio;
+            Cliente = cliente;
+            Veterinario = veterinario;
             Peso = peso;
             Temperatura = temperatura;
-            QueixaPrincipal = queixaPrincipal;
-            Procedimento = procedimento;
+            QueixaPrincipal = queixaPrincipal ?? throw new ArgumentException(nameof(queixaPrincipal));
+            Procedimento = procedimento ?? throw new ArgumentException(nameof(procedimento));
             Total = total;
             Unitario = unitario;
             Quantidade = quantidade;
-            Situacao = situacao;
-            Observacoes = observacoes;
+            Situacao = situacao ?? throw new ArgumentException(nameof(situacao));
+            Observacoes = observacoes ?? throw new ArgumentException(nameof(observacoes));
         }
 
         public void IniciarConsulta()

@@ -11,6 +11,8 @@ namespace Vet.Domain.Produto
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
 
+        public Vacinas() { }
+
         public Vacinas(string nome)
         {
             Id = Guid.NewGuid();

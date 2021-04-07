@@ -11,6 +11,8 @@ namespace Vet.Domain.Endereco
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
 
+        public Cidade() { }
+
         public Cidade(string nome)
         {
             Id = Guid.NewGuid();

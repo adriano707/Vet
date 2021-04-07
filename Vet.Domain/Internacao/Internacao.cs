@@ -14,13 +14,15 @@ namespace Vet.Domain.Internacao
         public string Animal { get; private set; }
         public string Observacoes { get; private set; }
 
+        public Internacao() { }
+
         public Internacao(DateTimeOffset data, DateTimeOffset previsaoAlta, string animal, string observacoes)
         {
             Id = Guid.NewGuid();
             Data = DateTimeOffset.Now;
             PrevisaoAlta = previsaoAlta;
             Animal = animal;
-            Observacoes = observacoes;
+            Observacoes = observacoes ?? throw new ArgumentException(nameof(observacoes));
         }
     }
 }

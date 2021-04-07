@@ -10,6 +10,8 @@ namespace Vet.Domain.Pessoa
     {
         public string CRMV { get; private set; }
 
+        public Veterinario() { }
+
         public Veterinario(string nome, string crmv) : base(nome)
         {
             CRMV = crmv ?? throw new ArgumentNullException(nameof(crmv)); ;

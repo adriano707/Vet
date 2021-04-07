@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Vet.Data;
 
 namespace Vet
 {
@@ -23,7 +25,7 @@ namespace Vet
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // Este método é chamado pelo tempo de execução. Use este método para adicionar serviços ao contêiner.
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -32,9 +34,14 @@ namespace Vet
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Vet", Version = "v1" });
             });
+
+            services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("db_vet"));
+
+            services.AddScoped<DataContext>();
+
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        // Este método é chamado pelo tempo de execução.Use este método para configurar o pipeline de solicitação HTTP.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Vet.Dtos
+namespace Vet.Dtos.Animal
 {
-    public class PessoaDto
+    public class DietaDto
     {
         public Guid Id { get; set; }
-        public string Nome { get; set; }
-        public List<EnderecosDto> Enderecos { get; set; }
+        public string Descricao { get; set; }
     }
 }

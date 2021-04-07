@@ -10,7 +10,7 @@ namespace Vet.Dtos.Financeiro
     {
         public Guid Id { get; set; }
         public DateTimeOffset Data { get; set; }
-        public Pessoa.Cliente Cleinte { get; set; }
+        public PessoaDto Cleinte { get; set; }
         public string Numero { get; set; }
         public string Observacoes { get; set; }
         public double Total { get; set; }

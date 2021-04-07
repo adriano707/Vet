@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vet.Domain.Pessoa
 {
-    class Cliente : Pessoa
+    public class Cliente : Pessoa
     {
         public List<Animal.Animal> Animal { get; set; }
+
+        public Cliente() { }
 
         public Cliente(string nome): base(nome)
         {

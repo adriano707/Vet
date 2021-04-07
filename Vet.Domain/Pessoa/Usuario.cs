@@ -13,6 +13,8 @@ namespace Vet.Domain.Pessoa
         public string Login { get; private set; }
         public string Senha { get; private set; }
 
+        public Usuario() { }
+
         public Usuario(string nome, string email, bool administrador, string login, string senha) : base(nome)
         {
             Email = email ?? throw new ArgumentNullException(nameof(email));

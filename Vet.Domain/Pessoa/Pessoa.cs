@@ -13,6 +13,10 @@ namespace Vet.Domain.Pessoa
         public string Nome { get; private set; }
         public IReadOnlyCollection<Endereco.Endereco> Endereco => _enderecos;
 
+        public Pessoa()
+        {
+        }
+
         public Pessoa(string nome)
         {
             Id = Guid.NewGuid();
@@ -25,16 +29,5 @@ namespace Vet.Domain.Pessoa
             return true;
         }
 
-        public class Veterinario
-        {
-        }
-
-        public class Pessoa
-        {
-        }
-
-        public class Cliente
-        {
-        }
     }
 }

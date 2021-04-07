@@ -17,6 +17,11 @@ namespace Vet.Domain.Endereco
         public string Rua { get; private set; }
         public string Complemento { get; private set; }
 
+        public Endereco()
+        {
+
+        }
+
         public Endereco(Bairro bairro, Cidade cidade, Estado estado, string cep, string numero, string rua, string complemento)
         {
             Id = Guid.NewGuid();

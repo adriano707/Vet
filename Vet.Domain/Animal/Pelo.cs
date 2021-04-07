@@ -11,6 +11,8 @@ namespace Vet.Domain.Animal
         public Guid Id { get; private set; }
         public string Nome { get; private set; }
 
+        public Pelo() { }
+
         public Pelo(string nome)
         {
             Id = Guid.NewGuid();
